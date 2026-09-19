@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #efeae2;
+  --navy: #0e1c36;
+  --gray: #5a5a5a;
+  --gray-soft: #f4f4f4;
+  --gray-line: #d6d6d6;
+  --font-georgia: Georgia, "Times New Roman", Times, serif;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-navy: var(--navy);
+  --color-gray: var(--gray);
+  --color-gray-soft: var(--gray-soft);
+  --color-gray-line: var(--gray-line);
+  --font-sans: var(--font-ibm-plex-sans);
+  --font-serif: var(--font-georgia);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+body {
+  background: var(--cream);
+  color: var(--navy);
+  font-family: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
