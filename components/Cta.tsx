@@ -13,9 +13,9 @@ export function Cta() {
           Book a Revenue Recovery Review.
         </h2>
         <p className="mt-6 max-w-xl text-lg leading-8 text-cream/75">
-          We will walk through your report, where revenue may be leaking, and
-          which Revenue Recovery package is the right next step. We do not
-          install the system on this call.
+          We will walk through where revenue may be leaking and which Revenue
+          Recovery package is the right next step. We do not install the system
+          on this call.
         </p>
         <BookingButton variant="inverse" className="mt-8">
           Book a Revenue Recovery Review

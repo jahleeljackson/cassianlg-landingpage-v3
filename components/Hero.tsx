@@ -14,11 +14,8 @@ export function Hero() {
         <p className="mt-8 max-w-2xl text-lg leading-8 text-gray sm:text-xl sm:leading-9">
           {site.subheadline}
         </p>
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <ButtonLink href="#calculator">{site.primaryCta}</ButtonLink>
-          <ButtonLink href="#book" variant="line">
-            {site.secondaryCta}
-          </ButtonLink>
+        <div className="mt-10">
+          <ButtonLink href="#book">{site.primaryCta}</ButtonLink>
         </div>
       </div>
     </section>

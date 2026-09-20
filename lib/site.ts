@@ -1,7 +1,5 @@
 const DEFAULT_BOOKING_URL =
   "https://api.leadconnectorhq.com/widget/booking/BX691Gj3uOHrHsrogaDh";
-const DEFAULT_FORM_URL =
-  "https://api.leadconnectorhq.com/widget/form/Rjoge8cVnOWJVFQN5AmC";
 
 export const site = {
   name: "Cassian AI",
@@ -9,7 +7,6 @@ export const site = {
   dba: "Cassian AI",
   bookingUrl:
     process.env.NEXT_PUBLIC_BOOKING_URL?.trim() || DEFAULT_BOOKING_URL,
-  formUrl: process.env.NEXT_PUBLIC_FORM_URL?.trim() || DEFAULT_FORM_URL,
   headline:
     "Recover the revenue already sitting in missed calls, estimates, and stale leads.",
   subheadline:
@@ -18,20 +15,12 @@ export const site = {
     "Cassian AI builds revenue recovery systems for service businesses: instant follow-up, appointment booking, and conversion of missed calls, estimates, and stale opportunities.",
   positioning:
     "Never let a missed call, web inquiry, estimate, or stale opportunity become a lost customer.",
-  calculatorHeadline:
-    "How Much Revenue Could Your Business Recover From Existing Leads?",
-  calculatorSubheadline:
-    "Answer a few questions about your calls, inquiries, estimates, and follow-up process. We’ll estimate where revenue may be leaking and show you what recovering those opportunities could be worth.",
-  calculatorCta: "Calculate My Revenue Recovery Potential",
-  reportName: "Revenue Recovery Opportunity Report",
-  primaryCta: "Calculate My Revenue Recovery Potential",
-  secondaryCta: "Book a Revenue Recovery Review",
+  primaryCta: "Book a Revenue Recovery Review",
 };
 
 export const navLinks = [
   { href: "#problem", label: "Problem" },
   { href: "#offer", label: "Offer" },
-  { href: "#calculator", label: "Calculator" },
   { href: "#faqs", label: "FAQs" },
   { href: "#book", label: "Book a call" },
 ] as const;
@@ -207,11 +196,6 @@ export const faqs = [
       "Yes. Every tier has a three-month minimum so the system has time to run, get optimized, and produce a fair read on recovered opportunities.",
   },
   {
-    question: "Is the calculator a guarantee of recovered revenue?",
-    answer:
-      "No. The Revenue Recovery Opportunity Report is an estimate based on the numbers you enter and transparent recovery-rate assumptions (5%, 10%, and 15%). It is not a promise of results. We show a range and list the assumptions used.",
-  },
-  {
     question: "Who is this for?",
     answer:
       "Service businesses that already generate inbound calls, web inquiries, or estimates and lose work because follow-up is slow or inconsistent—home services, contractors, restoration, agencies, and similar operators.",
@@ -229,7 +213,7 @@ export const faqs = [
   {
     question: "What happens on the Revenue Recovery Review?",
     answer:
-      "We walk through your report, where revenue is leaking, and which Revenue Recovery package is the right next step. We do not install the system on that call.",
+      "We walk through where revenue may be leaking and which Revenue Recovery package is the right next step. We do not install the system on that call.",
   },
 ] as const;
 
