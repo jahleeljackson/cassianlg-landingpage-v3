@@ -1,5 +1,7 @@
 const DEFAULT_BOOKING_URL =
   "https://api.leadconnectorhq.com/widget/booking/BX691Gj3uOHrHsrogaDh";
+const DEFAULT_FORM_URL =
+  "https://api.leadconnectorhq.com/widget/form/uh1CKsDJc1h8KCZYEvJ8";
 
 export const site = {
   name: "Cassian AI",
@@ -16,11 +18,20 @@ export const site = {
   positioning:
     "Never let a missed call, web inquiry, estimate, or stale opportunity become a lost customer.",
   primaryCta: "Book a Revenue Recovery Review",
+  formUrl: process.env.NEXT_PUBLIC_FORM_URL?.trim() || DEFAULT_FORM_URL,
+  demoEyebrow: "Try the Lead Response System",
+  demoHeadline: "See how fast your business could respond to a new lead",
+  demoSubheadline:
+    "Submit your details and receive a live email and text demonstration of how an automated lead-response system can follow up, qualify prospects, and help book appointments while your team is busy.",
+  demoNote:
+    "This is a live demonstration. The form, confirmation email, and text are sent the same way new leads would be contacted, qualified, and routed for your business.",
+  demoCta: "Book the Revenue Review Call",
 };
 
 export const navLinks = [
   { href: "#problem", label: "Problem" },
   { href: "#offer", label: "Offer" },
+  { href: "#demo", label: "Try it" },
   { href: "#faqs", label: "FAQs" },
   { href: "#book", label: "Book a call" },
 ] as const;
@@ -215,6 +226,11 @@ export const faqs = [
     answer:
       "We walk through where revenue may be leaking and which Revenue Recovery package is the right next step. We do not install the system on that call.",
   },
+  {
+    question: "What happens when I try the Lead Response System?",
+    answer:
+      "You submit your details in the form. That lead is recorded in HighLevel and you immediately get an email and a text—the same speed and personalization your inbound inquiries would receive. When you are ready, book a Revenue Review Call to talk through putting the system on your business.",
+  },
 ] as const;
 
 export const calculatorSteps = [
@@ -279,6 +295,10 @@ export function bookingHref() {
 
 export function isBookingConfigured() {
   return site.bookingUrl.length > 0;
+}
+
+export function isFormConfigured() {
+  return site.formUrl.length > 0;
 }
 
 export function formatUsd(value: number) {
