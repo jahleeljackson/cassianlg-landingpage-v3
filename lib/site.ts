@@ -132,55 +132,37 @@ export const problemSources = [
 
 export const offerTiers = [
   {
-    id: "lead-recovery",
-    name: "Lead Recovery",
-    setup: 997,
-    monthly: 197,
-    term: "3 months",
-    bestFor: "Faster response and consistent follow-up",
-    recommended: false,
+    id: "reply-and-book",
+    name: "Reply & Book",
+    setup: 1497,
+    monthly: 497,
+    intro: null,
     features: [
       "Instant lead response via SMS and email",
       "Automated follow-up sequences",
       "Missed-call recovery",
       "CRM pipeline setup",
       "Internal notifications",
-      "Basic monitoring, maintenance, and reporting",
-    ],
-  },
-  {
-    id: "lead-to-appointment",
-    name: "Lead → Appointment",
-    setup: 1497,
-    monthly: 297,
-    term: "3 months",
-    bestFor: "Turning inquiries into booked appointments",
-    recommended: true,
-    intro: "Everything in Lead Recovery, plus:",
-    features: [
       "Automated appointment booking",
       "Lead qualification and routing",
       "Appointment confirmations and reminders",
       "No-show recovery",
+      "Monitoring, maintenance, and reporting",
       "Monthly optimization",
     ],
   },
   {
-    id: "revenue-recovery",
-    name: "Revenue Recovery",
-    setup: 2497,
-    monthly: 497,
-    term: "3 months",
-    bestFor: "Recovering opportunities across the sales pipeline",
-    recommended: false,
-    intro: "Everything in Lead → Appointment, plus:",
+    id: "revenue-recovery-partner",
+    name: "Revenue Recovery Partner",
+    setup: 9997,
+    monthly: 1497,
+    intro: "Everything in Reply & Book, plus:",
     features: [
-      "Estimate and quote follow-up",
-      "Stale lead reactivation",
-      "Past-customer reactivation",
-      "Review automation",
-      "Revenue opportunity alerts",
-      "Enhanced reporting and optimization",
+      "Database reactivation of old leads, estimates, and past customers",
+      "Appointment setting matched to your calendar",
+      "Faster response across calls, forms, chat, and web",
+      "Monthly review call",
+      "Priority support",
     ],
   },
 ] as const;
@@ -194,17 +176,12 @@ export const faqs = [
   {
     question: "Which package should I start with?",
     answer:
-      "Most service businesses start with Lead → Appointment ($1,497 setup + $297/month). It is the recommended default: instant response plus booking, reminders, and no-show recovery. Choose Lead Recovery if you only need faster follow-up, or Revenue Recovery if you also want estimate, stale-lead, and past-customer reactivation.",
+      "Reply & Book covers inbound response and appointment booking. Revenue Recovery Partner adds a database reactivation campaign for old leads, estimates, and past customers. We will help you choose on the Revenue Recovery Review.",
   },
   {
     question: "What does the monthly fee include?",
     answer:
       "Software infrastructure, workflow monitoring, maintenance, troubleshooting, and ongoing optimization. It is not a bare software seat.",
-  },
-  {
-    question: "Is there a minimum term?",
-    answer:
-      "Yes. Every tier has a three-month minimum so the system has time to run, get optimized, and produce a fair read on recovered opportunities.",
   },
   {
     question: "Who is this for?",
@@ -214,12 +191,12 @@ export const faqs = [
   {
     question: "How long does setup take?",
     answer:
-      "Typical onboarding for Lead → Appointment starts after a Revenue Recovery Review. Exact timing depends on your current phone, forms, calendar, and CRM setup, which we map on the call.",
+      "Onboarding starts after a Revenue Recovery Review. Exact timing depends on your current phone, forms, calendar, and CRM setup, which we map on the call.",
   },
   {
     question: "Do I need a CRM already?",
     answer:
-      "No. If you already use a platform, we work with what you have where it makes sense. If you do not, the system includes CRM pipeline setup as part of Lead Recovery and above.",
+      "No. If you already use a platform, we work with what you have where it makes sense. If you do not, the system includes CRM pipeline setup.",
   },
   {
     question: "What happens on the Revenue Recovery Review?",

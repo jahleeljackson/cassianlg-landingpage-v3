@@ -19,113 +19,34 @@ export function Offer() {
           {site.positioning}
         </blockquote>
 
-        <div className="mt-14 overflow-x-auto border border-gray-line">
-          <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
-            <thead>
-              <tr className="bg-gray-soft">
-                <th className="w-36 border-b border-r border-gray-line px-4 py-3 font-semibold text-gray">
-                  <span className="sr-only">Plan detail</span>
-                </th>
-                {offerTiers.map((tier) => (
-                  <th
-                    key={tier.id}
-                    className={`border-b border-r border-gray-line px-4 py-3 last:border-r-0 ${
-                      tier.recommended ? "bg-navy text-cream" : "text-navy"
-                    }`}
-                  >
-                    {tier.recommended ? (
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cream/70">
-                        Recommended
-                      </p>
-                    ) : null}
-                    <p className="font-serif text-xl font-normal">{tier.name}</p>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th className="border-b border-r border-gray-line px-4 py-3 font-semibold text-gray">
-                  Setup
-                </th>
-                {offerTiers.map((tier) => (
-                  <td
-                    key={`${tier.id}-setup`}
-                    className={`border-b border-r border-gray-line px-4 py-3 last:border-r-0 ${
-                      tier.recommended ? "bg-navy/5 font-semibold" : ""
-                    }`}
-                  >
-                    {formatUsd(tier.setup)}
-                  </td>
-                ))}
-              </tr>
-              <tr>
-                <th className="border-b border-r border-gray-line px-4 py-3 font-semibold text-gray">
-                  Monthly
-                </th>
-                {offerTiers.map((tier) => (
-                  <td
-                    key={`${tier.id}-monthly`}
-                    className={`border-b border-r border-gray-line px-4 py-3 last:border-r-0 ${
-                      tier.recommended ? "bg-navy/5 font-semibold" : ""
-                    }`}
-                  >
-                    {formatUsd(tier.monthly)}/mo
-                  </td>
-                ))}
-              </tr>
-              <tr>
-                <th className="border-b border-r border-gray-line px-4 py-3 font-semibold text-gray">
-                  Minimum term
-                </th>
-                {offerTiers.map((tier) => (
-                  <td
-                    key={`${tier.id}-term`}
-                    className={`border-b border-r border-gray-line px-4 py-3 last:border-r-0 ${
-                      tier.recommended ? "bg-navy/5" : ""
-                    }`}
-                  >
-                    {tier.term}
-                  </td>
-                ))}
-              </tr>
-              <tr>
-                <th className="border-r border-gray-line px-4 py-3 font-semibold text-gray">
-                  Best for
-                </th>
-                {offerTiers.map((tier) => (
-                  <td
-                    key={`${tier.id}-best`}
-                    className={`border-r border-gray-line px-4 py-3 text-gray last:border-r-0 ${
-                      tier.recommended ? "bg-navy/5 text-navy" : ""
-                    }`}
-                  >
-                    {tier.bestFor}
-                  </td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div className="mt-14 grid gap-10 lg:grid-cols-3">
-          {offerTiers.map((tier) => (
-            <article
+        <div className="mt-14 grid border border-gray-line sm:grid-cols-2">
+          {offerTiers.map((tier, index) => (
+            <div
               key={tier.id}
-              className={`border p-6 ${
-                tier.recommended ? "border-navy" : "border-gray-line"
+              className={`px-8 py-10 ${
+                index === 0 ? "border-b border-gray-line sm:border-b-0 sm:border-r" : ""
               }`}
             >
-              {tier.recommended ? (
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray">
-                  Recommended default
-                </p>
-              ) : null}
-              <h3 className="mt-2 font-serif text-2xl text-navy">{tier.name}</h3>
-              <p className="mt-2 text-sm text-gray">
-                {formatUsd(tier.setup)} setup · {formatUsd(tier.monthly)}/mo
+              <p className="font-serif text-2xl text-navy">{tier.name}</p>
+              <p className="mt-8 font-serif text-5xl leading-none tracking-tight text-navy">
+                {formatUsd(tier.setup)}
               </p>
-              {"intro" in tier && tier.intro ? (
+              <p className="mt-3 text-[13px] font-semibold uppercase tracking-[0.18em] text-gray">
+                Setup
+              </p>
+              <p className="mt-8 text-lg text-navy">
+                {formatUsd(tier.monthly)}
+                <span className="text-gray"> / month</span>
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-14 grid gap-10 lg:grid-cols-2">
+          {offerTiers.map((tier) => (
+            <article key={tier.id} className="border border-gray-line p-6">
+              <h3 className="font-serif text-2xl text-navy">{tier.name}</h3>
+              {tier.intro ? (
                 <p className="mt-5 text-sm font-semibold text-navy">{tier.intro}</p>
               ) : null}
               <ul className="mt-4 space-y-2 text-sm leading-6 text-gray">
@@ -142,9 +63,6 @@ export function Offer() {
           monitoring, maintenance, troubleshooting, and ongoing optimization.
           Clients pay for a revenue-conversion system—not a generic CRM
           subscription.
-        </p>
-        <p className="mt-4 text-sm font-semibold text-navy">
-          Recommended default: Lead → Appointment at $1,497 setup + $297/month.
         </p>
         <BookingButton className="mt-8">
           Book a Revenue Recovery Review
