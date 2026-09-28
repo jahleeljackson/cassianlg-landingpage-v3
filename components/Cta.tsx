@@ -1,6 +1,4 @@
-import { BookingButton } from "@/components/BookingButton";
 import { BookingEmbed } from "@/components/BookingEmbed";
-import { isBookingConfigured } from "@/lib/site";
 
 export function Cta() {
   return (
@@ -17,25 +15,9 @@ export function Cta() {
           Recovery package is the right next step. We do not install the system
           on this call.
         </p>
-        <BookingButton variant="inverse" className="mt-8">
-          Book a Revenue Recovery Review
-        </BookingButton>
 
-        <div className="mt-12 bg-cream text-navy">
-          {isBookingConfigured() ? (
-            <BookingEmbed />
-          ) : (
-            <div className="flex min-h-[20rem] flex-col items-start justify-center px-8 py-16 sm:px-12">
-              <p className="font-serif text-3xl">Calendar coming soon</p>
-              <p className="mt-3 max-w-md text-sm leading-7 text-gray">
-                The booking calendar will sit here. Until then, use the button
-                and we will get you a time.
-              </p>
-              <BookingButton className="mt-8">
-                Book a Revenue Recovery Review
-              </BookingButton>
-            </div>
-          )}
+        <div className="mt-10 bg-cream text-navy">
+          <BookingEmbed />
         </div>
       </div>
     </section>
